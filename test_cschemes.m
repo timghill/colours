@@ -6,7 +6,7 @@ y4 = -75 + 3*(1:100) + 10*randn(1, 100);
 % cscheme = get_colourscheme('cc-vivid');
 % cscheme = cscheme(6:end, :);
 
-cscheme = get_colourscheme('5set3');
+cscheme = get_colourscheme('tab-GreenOrange');
 
 figure
 hold on
