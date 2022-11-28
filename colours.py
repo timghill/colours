@@ -94,6 +94,8 @@ def show_continuous():
 
     fig.subplots_adjust(left=0.02, right=0.98, bottom=0.05, top=0.95)
 
+    return fig
+
 def show_categorical():
     db_path = 'data/categorical'
     cmap_files = sorted(os.listdir(db_path))
@@ -124,11 +126,17 @@ def show_categorical():
     fig.subplots_adjust(left=0.02, right=0.98, bottom=0.05, top=0.95,
             hspace=0.025, wspace=0.025)
 
+    return fig
+
 def show():
-    show_continuous()
-    show_categorical()
+    f1 = show_continuous()
+    f2 = show_categorical()
 
     plt.show()
 
+    return f1, f2
+
 if __name__=='__main__':
-    show()
+    f1,f2 = show()
+    f1.savefig('continuous.png', dpi=600)
+    f2.savefig('categorical.png', dpi=600)

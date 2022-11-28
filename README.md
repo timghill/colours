@@ -1,6 +1,11 @@
 # Colourmaps for scientific visualization
 This repo has a large number of colourmaps to use in scientific visualizations. These colourmaps come from a range of sources and can be used with Matlab AND python.
 
+![Continuous colourmaps](continuous.png)
+
+![Discrete colour schemes](categorical.png)
+
+
 ## Colour map sources
 
  * [Scientific colour maps](https://zenodo.org/record/4153113#.X9ueU9ZyZhE): All colourmaps prefixed by `scm`.
