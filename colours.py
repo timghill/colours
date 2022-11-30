@@ -12,12 +12,20 @@ from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 from matplotlib import pyplot as plt
 
 def get_colourmap(name):
-    fpath = 'data/continuous/' + name + '.txt'
+    this_path=os.path.abspath(__file__)
+    this_path = os.path.split(this_path)[0]
+    db_path=os.path.normpath(os.path.join(this_path,'data/continuous/'))
+    fpath = os.path.join(db_path, name + '.txt')
     colour_map = np.loadtxt(fpath)
     return ListedColormap(colour_map)
 
 def get_colourscheme(name):
-    return np.loadtxt('data/categorical/' + name + '.txt')
+    this_path=os.path.abspath(__file__)
+    this_path = os.path.split(this_path)[0]
+    db_path=os.path.normpath(os.path.join(this_path,'data/categorical/'))
+    fpath = os.path.join(db_path, name + '.txt')
+
+    return np.loadtxt(fpath)
 
 def join_cmaps(cm1, cm2, N1=128, N2=128, name='Joined Cmap', average=False):
     """Join two LinearSegmentedColormap instances
